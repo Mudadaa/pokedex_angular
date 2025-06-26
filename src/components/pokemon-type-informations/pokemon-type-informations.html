@@ -1,0 +1,8 @@
+@if (types(); as types) {
+    <div class="shadow-2xl ring-1 ring-purple-500">
+        <p class="text-center pt-2"> Types </p>
+        <div class="flex flex-col gap-4 py-4">
+            <img  *ngFor="let type of types" [src]="type.image" class="px-4" />
+        </div>
+    </div>
+}

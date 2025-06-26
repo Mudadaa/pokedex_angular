@@ -1,0 +1,14 @@
+@if (pokemon(); as pokemon) {
+    <div>
+        <h2 class="text-xl font-bold">{{ pokemon.name.fr }}</h2>
+        <div class="mt-4 flex flex-row gap-4 items-center">
+            <div class="flex flex-col gap-4">
+                <app-pokemon-type-informations [types]="pokemon.types"></app-pokemon-type-informations>
+                <app-pokemon-statistics [statistics]="pokemon.stats"></app-pokemon-statistics>
+            </div>
+            <app-pokemon-resistances [resistances]="pokemon.resistances"></app-pokemon-resistances>
+            <img [src]="pokemon.sprites.regular" class="shadow-2xl ring-1 ring-purple-500 mt-4"/>
+        </div>
+    </div>
+}
+

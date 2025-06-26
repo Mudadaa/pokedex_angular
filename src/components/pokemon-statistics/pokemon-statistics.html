@@ -1,0 +1,30 @@
+@if (statistics(); as stats) {
+    <table class="shadow-2xl ring-1 ring-purple-500">
+        <tbody>
+            <tr>
+                <td class="p-2 font-bold">HP</td>
+                <td class="p-2 pl-4">{{ stats.hp }}</td>
+            </tr>
+            <tr>
+                <td class="p-2 font-bold">DEF</td>
+                <td class="p-2 pl-4">{{ stats.def }}</td>
+            </tr>
+            <tr>
+                <td class="p-2 font-bold">ATK</td>
+                <td class="p-2 pl-4">{{ stats.atk }}</td>
+            </tr>
+            <tr>
+                <td class="p-2 font-bold">ATK SPE</td>
+                <td class="p-2 pl-4">{{ stats.hp }}</td>
+            </tr>
+            <tr>
+                <td class="p-2 font-bold">DEF SPE</td>
+                <td class="p-2 pl-4">{{ stats.hp }}</td>
+            </tr>
+            <tr>
+                <td class="p-2 font-bold">VIT</td>
+                <td class="p-2 pl-4">{{ stats.vit }}</td>
+            </tr>
+        </tbody>
+    </table>
+}

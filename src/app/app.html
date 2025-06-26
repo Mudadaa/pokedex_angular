@@ -1,0 +1,21 @@
+<main class="p-4 text-purple-600">
+  <h1 class="text-3xl font-bold underline">
+    Tyradex Angular 20
+  </h1>
+
+  <form class="mt-4" [formGroup]="pokemonForm" (ngSubmit)="onSubmit()">
+    <label for="pokemon-name">Nom du pokemon</label>
+    <input name="pokemon-name" formControlName="pokemonName" class="shadow border rounded mx-4" />
+    <button type="submit" class="bg-purple-400 hover:bg-purple-700 text-white fond-bold px-4 rounded">Rechercher</button>
+  </form>
+
+  <div *ngIf="pokemonData" class="mt-4">
+    <app-pokemon-view [pokemon]="pokemonData"></app-pokemon-view>
+  </div>
+  <div *ngIf="pokemonNotExist" class="mt-4">
+    <p>Le pokemon {{ pokemonNotFoundName }} n'existe pas </p>
+  </div>
+
+</main>
+
+<router-outlet />
