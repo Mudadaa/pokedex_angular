@@ -1,15 +1,26 @@
-<main class="p-4 text-purple-600">
-  <h1 class="text-3xl font-bold underline">
-    Tyradex Angular 20
+<main class="relative min-h-screen p-4 bg-[radial-gradient(circle_at_50%_35%,#38072b_0%,#25071c_48%,#10020c_100%)]">
+  <img
+    class="absolute inset-0 -z-10 h-full w-full object-cover"
+    src="/foret_background.png"
+    alt="background_naturel_de_pokemon"
+  />
+  <h1 class="text-3xl bg-[#BC564F] w-fit text-white fond-bold fond-bold p-2 rounded mb-5 ">
+    Pokedex Angular
   </h1>
 
-  <form class="mt-4" [formGroup]="pokemonForm" (ngSubmit)="onSubmit()">
-    <label for="pokemon-name">Nom du pokemon</label>
-    <input name="pokemon-name" formControlName="pokemonName" class="shadow border rounded mx-4" />
-    <button type="submit" class="bg-purple-400 hover:bg-purple-700 text-white fond-bold px-4 rounded">Rechercher</button>
+  <form class="mt-8 mb-9 " [formGroup]="pokemonForm" (ngSubmit)="onSubmit()">
+    <label class="bg-[#BC564F] text-white fond-bold fond-bold p-2 rounded" for="pokemon-name">Nom du pokemon :</label>
+    <input name="pokemon-name" formControlName="pokemonName" class="shadow border border-white/30 bg-white/20 backdrop-blur-md rounded mx-4 p-1" />
+    <button type="submit" class="bg-[#BC564F] hover:bg-[#9A4B41] text-white fond-bold p-2 rounded">Rechercher</button>
   </form>
 
-  <div *ngIf="pokemonData" class="mt-4">
+  <div class="flex items-center justify-center">
+   <img src="/oak_ash.jpg" 
+   class="rounded"
+   alt="red_and_professor_oak_standing_next_to_eachother">
+  </div>
+
+  <div *ngIf="pokemonData" class="mt-4 ">
     <app-pokemon-view [pokemon]="pokemonData"></app-pokemon-view>
   </div>
   <div *ngIf="pokemonNotExist" class="mt-4">
