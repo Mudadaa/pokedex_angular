@@ -5,6 +5,7 @@ import { TyraDexApiService } from '../services/tyradex-api/tyradex-api.service';
 import { Pokemon } from '../services/tyradex-api/model/pokemon';
 import { PokemonView } from '../components/pokemon-view/pokemon-view';
 import { CommonModule } from '@angular/common';
+import { ButtonComponent } from '../components/button/button';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +13,17 @@ import { CommonModule } from '@angular/common';
     RouterOutlet,
     ReactiveFormsModule,
     PokemonView,
+    
     CommonModule
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
+  showImage = true;
+hideFunction() {
+throw new Error('Method not implemented.');
+}
   protected title = 'tyradex-angular20';
   private pokemonService = inject(TyraDexApiService);
   pokemonData: Pokemon | undefined;

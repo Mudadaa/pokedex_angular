@@ -1,0 +1,57 @@
+@if (evolutions(); as evo) {
+
+  <!-- Texte pré/next -->
+  @if (evo.pre?.length) {
+    <p class="font-semibold">Pré-évolutions</p>
+    @for (p of evo.pre; track p.pokedex_id) {
+      <div>
+        {{ p.name }}
+        @if (p.condition) { ({{ p.condition }}) }
+      </div>
+    }
+  }
+
+  @if (evo.next?.length) {
+    <p class="font-semibold mt-2">Évolutions</p>
+    @for (n of evo.next; track n.pokedex_id) {
+      <div>
+        {{ n.name }}
+        @if (n.condition) { ({{ n.condition }}) }
+      </div>
+    }
+  }
+
+  <!-- Méga (direct depuis evo.mega, pas besoin d'API) -->
+  @if (evo.mega?.length) {
+    <div class="mt-4">
+      <p class="font-semibold">Méga</p>
+
+      <div class="flex gap-2 flex-wrap">
+        @for (m of evo.mega; track m.orbe) {
+          <div class="flex flex-col items-center">
+            <img
+              [src]="m.sprites.regular"
+              [alt]="m.orbe"
+              class="object-contain drop-shadow w-20"
+            />
+            <span class="text-xs text-slate-600 mt-1">{{ m.orbe }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  }
+
+  <!-- Images pré/next (chargées via API) -->
+  @if (evolutionPokemons().length) {
+    <div class="flex gap-2 flex-wrap mt-3">
+      @for (p of evolutionPokemons(); track p.pokedex_id) {
+        <img
+          [src]="p.sprites.regular"
+          [alt]="p.name.fr"
+          class="object-contain drop-shadow w-20"
+        />
+      }
+    </div>
+  }
+
+}

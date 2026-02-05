@@ -11,4 +11,8 @@ export class TyraDexApiService {
     getPokemonByName(name: string) {
         return this.http.get<Pokemon>(`${this.BASE_URL}/pokemon/${name}`)
     }
+    getPokemonById(id: number) {
+  return this.http.get<Pokemon>(`${this.BASE_URL}/pokemon/${id}`);
+}
+
 }
