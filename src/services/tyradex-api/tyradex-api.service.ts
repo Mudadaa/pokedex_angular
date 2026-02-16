@@ -6,7 +6,7 @@ import { Pokemon } from "./model/pokemon";
 export class TyraDexApiService {
     private http = inject(HttpClient);
 
-    private BASE_URL = 'https://tyradex.vercel.app/api/v1'
+    private BASE_URL = 'https://tyradex.app/api/v1'
 
     getPokemonByName(name: string) {
         return this.http.get<Pokemon>(`${this.BASE_URL}/pokemon/${name}`)
