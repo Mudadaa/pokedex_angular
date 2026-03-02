@@ -72,7 +72,18 @@ ngOnDestroy() {
       })
     }
   }
-  
+  goBack() {
+  // Reset recherche
+  this.pokemonData = undefined;
+  this.pokemonNotExist = false;
+  this.pokemonNotFoundName = null;
+
+  // Reset formulaire
+  this.pokemonForm.reset();
+
+  // Relancer les 6 aléatoires
+  this.loadRandomPokemons(6);
+}
   
 private fillRandomUnique(target: number) {
   if (this.randomPokemons.length >= target) {

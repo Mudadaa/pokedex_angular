@@ -1,13 +1,27 @@
 <main
   class=" w-full flex flex-col p-8 bg-[radial-gradient(circle_at_50%_35%,#38072b_0%,#25071c_48%,#10020c_100%)] min-h-screen"
 >
-  <h1
+<div class="flex justify-between items-center">
+
+    <h1
     class="flex items-center justify-center text-3xl bg-[#BC564F] w-fit text-white p-2 rounded mb-5 mx-auto md:mx-0 md:justify-start"
   >
     <!-- mx-auto centre le bloc -->
     Pokedex Angular
   </h1>
+  <div class="flex items-center justify-center text-3xl bg-[#BC564F] w-fit text-white p-2 rounded mb-5 mx-auto md:mx-0 md:justify-start">
+    @if(pokemonData || pokemonNotExist){
+      <button 
+  type="button"
+  (click)="goBack()"
+  class="hover:bg-[#9A4B41] transition px-3 py-1 rounded"
+>
+  Retour
+</button>
+    }
+</div>
 
+  </div>
   <form
     class="flex justify-center mt-8 mb-9 align-items md:justify-start"
     [formGroup]="pokemonForm"
@@ -47,7 +61,7 @@
 
 </div>
 
-<div class="flex justify-center items-center align-center">
+<div class="flex justify-center items-center align-center w-full overflow-hidden rounded-2xl border border-white/10 bg-black/30 shadow-[0_0_40px_rgba(168,85,247,0.15)]">
  @if (randomPokemons.length === 6) {
   <div class="w-full overflow-hidden rounded-2xl border border-white/10 bg-black/30">
     <!-- TRACK -->
@@ -61,7 +75,7 @@
           <img
             [src]="p.sprites.regular || p.sprites.shiny"
             [alt]="p.name.fr"
-            class="h-28 w-28 object-contain"
+            class="max-h-28 max-w-28 object-contain"
           />
         </div>
       }
