@@ -52,7 +52,7 @@ ngOnDestroy() {
     pokemonName: new FormControl('')
   });
  ngOnInit() {
-    this.loadRandomPokemons(6);
+    this.loadRandomPokemons(24);
   }
   onSubmit() {
     const pokemonName = this.pokemonForm.value.pokemonName;
@@ -82,7 +82,7 @@ ngOnDestroy() {
   this.pokemonForm.reset();
 
   // Relancer les 6 aléatoires
-  this.loadRandomPokemons(6);
+  this.loadRandomPokemons(24);
 }
   
 private fillRandomUnique(target: number) {
@@ -130,7 +130,7 @@ private fillRandomUnique(target: number) {
     this.currentIndex = i;
   }
   
- loadRandomPokemons(count = 6) {
+ loadRandomPokemons(count = 24) {
   this.stopAuto();
   this.randomPokemons = [];
   this.currentIndex = 0;
